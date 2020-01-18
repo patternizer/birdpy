@@ -1,5 +1,3 @@
-![image](https://user-images.githubusercontent.com/5902974/60060221-8be28200-96e7-11e9-9b81-20258659aa0c.png)
-
 # birdpy
 
 Development version of code to convert .mov clips of birds in flight to ornitographic trajectories inspired by
