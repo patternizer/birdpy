@@ -19,8 +19,11 @@ in a conda virtual environment running a 64-bit version of Python 3.6+.
 
 birdpy can be run from sources directly, once the following module requirements are resolved:
 
-* `numpy`
-* `birdpy`
+* `moviepy`
+* 'film.MOV'
+* 'ambient.mp3'
+
+with durations suitably set.
 
 Run with:
 
