@@ -8,31 +8,6 @@
 # https://patternizer.github.io
 #-----------------------------------------------------------------------
 
-import os, sys, time, math
-import numpy as np
-from numpy import *
-
-import scipy
-import scipy.linalg as linalg
-from scipy.linalg import toeplitz, eigh 
-import scipy.signal as sig
-from scipy.stats import chi2
-from scipy.optimize import fmin_powell
-from scipy import interpolate
-from scipy import pi
-from scipy.fftpack import fft
-from scipy import signal
-from scipy.signal import lfilter
-import statsmodels.api as sm
-
-import seaborn as sns; sns.set(style="darkgrid")
-import matplotlib.pyplot as plt; plt.close("all")
-
-from sklearn import svm # sklearn = scikit-learn
-from sklearn.datasets import make_moons
-from skimage import transform as tf
-
-from vapory import *
 from moviepy.editor import *
 from moviepy.video.io.bindings import mplfig_to_npimage
 from moviepy.video.tools.segmenting import findObjects
@@ -44,28 +19,13 @@ change_settings({"IMAGEMAGICK_BINARY": r"C:\\Program Files\\ImageMagick-7.0.9-Q1
 
 #-----------------------------------------------------------------------------------------------
 # Animated matplotlib with audio segment
-duration = 50
+duration = 37
 audioclip = AudioFileClip("ambient.mp3").set_end(duration)
 
 # Load the raw film and select the subclip 00:00:11 - 00:00:16
 clip = (VideoFileClip("film.MOV", audio=False)
         .volumex(0.1) # quieten audio
         .subclip(6,16) # subclip: 00:00:11 - 00:00:16
-        .fx( vfx.resize, width=800) # resize (keep aspect ratio)
-        .fx( vfx.speedx, 1) # single speed
-        .fx( vfx.colorx, 1.0)) # darken the picture
-
-# Load the bird swirl
-loop1 = (VideoFileClip("film.MOV", audio=False)
-        .volumex(0.1) # quieten audio
-        .subclip(11,15) # subclip: 00:00:11 - 00:00:16
-        .fx( vfx.resize, width=800) # resize (keep aspect ratio)
-        .fx( vfx.speedx, 1) # single speed
-        .fx( vfx.colorx, 1.0)) # darken the picture
-
-loop2 = (VideoFileClip("film.MOV", audio=False)
-        .volumex(0.1) # quieten audio
-        .subclip(11,15) # subclip: 00:00:11 - 00:00:16
         .fx( vfx.resize, width=800) # resize (keep aspect ratio)
         .fx( vfx.speedx, 1) # single speed
         .fx( vfx.colorx, 1.0)) # darken the picture
@@ -104,11 +64,11 @@ clip_the_credits = the_credits.set_pos(lambda t:('center',-5*t)).set_duration(5)
 credits = CompositeVideoClip([last_frame, clip_the_credits])
 
 # Join up the clips
-final = concatenate_videoclips([title, author, clip, loop1, loop2, end, credits]).set_audio(audioclip)
+final = concatenate_videoclips([title, author, clip, end, credits]).set_audio(audioclip)
 
 # Write to file
 #video.preview(fps=30)
-final.write_videofile('patternizer.mp4',fps=25)
+final.write_videofile('ornithography_1.mp4',fps=25)
 #-----------------------------------------------------------------------------------------------
 
 print('** END')
