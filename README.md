@@ -1,3 +1,5 @@
+![image](https://github.com/patternizer/birdpy/blob/master/title_frame.png)
+
 # birdpy
 
 Development version of code to convert .mov clips of birds in flight to ornitographic trajectories inspired by
