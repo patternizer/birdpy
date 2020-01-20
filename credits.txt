@@ -1,0 +1,25 @@
+# This is a comment
+# The next line says : leave 4 blank lines
+.blank 4
+
+..Executive Story Editor
+MICHAEL TAYLOR
+
+..Music
+EMANCIPATOR - TIME FOR SPACE
+
+..Codebase
+GITHUB.COM/PATTERNIZER/BIRDPY
+
+..Python Dependencies
+PYTHON 3.8.1
+MOVIEPY 1.0.1
+
+..Datestamp
+2020-01-19 02:00  
+
+..Location
+GLOUCESTER, UK
+
+..Copyleft
+MIT LICENSE
